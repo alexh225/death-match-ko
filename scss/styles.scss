@@ -1,0 +1,193 @@
+$light-grey: #cfcfcf;
+$medium-light-grey: #384248;
+$medium-grey: #384248;
+$dark-charcoal: #2b3236;
+$almost-black: #1d2225;
+$white: #ffffff;
+$lightest-blue: rgb(197, 233, 255);
+$yellow: #f8e71c;
+$orange: #f5a623;
+$red: #b8182b;
+
+$gutter: 20px;
+$sidebar-size: 230px;
+$logo-size: 60px;
+$warrior-image-small: 50px;
+$warrior-image-large: 230px;
+
+@mixin background-transition {
+    transition: background-color 0.25s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+body {
+    background-color: $red;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    font-family: 'Phosphate Solid', 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 36px;
+}
+
+h2,
+h2 i {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    @include background-transition;
+    &:nth-child(even) {
+        background-color: lighten($almost-black, 5%);
+    }
+    &:hover {
+        @include background-transition;
+        background-color: lighten($almost-black, 20%);
+    }
+}
+
+th,
+td {
+    padding: ($gutter / 2) ($gutter * 0.75);
+}
+
+header {
+    background-color: $dark-charcoal;
+    color: $white;
+    padding: $gutter;
+    text-align: center;
+    h1 span {
+        display: inline-block;
+        height: $logo-size;
+        width: $logo-size;
+        border-radius: $logo-size / 2;
+        background-color: $white;
+        border: 15px solid $red;
+        margin: 0 10px -15px 10px;
+    }
+}
+
+aside {
+    background-color: $almost-black;
+    width: $sidebar-size;
+    float: left;
+    color: $white;
+    h3 {
+        text-align: center;
+        color: $orange;
+        margin-bottom: $gutter;
+    }
+}
+
+.warriors {
+    padding: 5px 0 $gutter $gutter;
+    li {
+        width: $warrior-image-small;
+        height: $warrior-image-small;
+        float: left;
+        list-style-type: none;
+        margin-right: $gutter;
+        margin-bottom: $gutter;
+    }
+}
+
+.warrior {
+    background-color: $light-grey;
+    @include background-transition;
+    &:hover {
+        background-color: darken($light-grey, 20%);
+        @include background-transition;
+    }
+}
+
+.top-five {
+    padding-bottom: 50px;
+    table {
+        width: 100%;
+    }
+    thead {
+        background-color: $medium-grey;
+    }
+    th,
+    td {
+        border-bottom: 1px solid $medium-light-grey;
+    }
+    .warrior-name {
+        text-align: left;
+    }
+    .ranking {
+        text-align: right;
+    }
+}
+
+.main {
+    width: calc(100% - #{$sidebar-size});
+    float: left;
+    color: $yellow;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    h2 {
+        margin-bottom: $gutter;
+        &:nth-of-type(2) {
+            margin: 40px 0;
+        }
+    }
+    h4 {
+        margin-bottom: 50px;
+    }
+    figure {
+        background-color: #4a4a4a;
+        padding: $gutter $gutter ($gutter + 30px) $gutter;
+        width: $warrior-image-large + ($gutter * 2);
+        height: $warrior-image-large + 30px + ($gutter * 2);
+        margin: 0 auto 0 auto;
+        .warrior {
+            width: $warrior-image-large;
+            height: $warrior-image-large;
+        }
+    }
+    figcaption {
+        color: #ffffff;
+        font-size: 18px;
+        .name {
+            float: left;
+            padding-top: 14px;
+        }
+        .wins {
+            float: right;
+            padding-top: 14px;
+        }
+    }
+}
+
+footer {
+    @extend header;
+    clear: both;
+}
