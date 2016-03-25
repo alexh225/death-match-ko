@@ -1,0 +1,16 @@
+{
+  "name": "death-match",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.spec.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "phantomcss": "^1.0.0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}
