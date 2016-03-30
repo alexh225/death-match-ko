@@ -9,97 +9,93 @@
 </head>
 
 <body>
-    
-    <header>
-        <h1>Death <span></span> Match</h1>
+
+    <header class="header">
+      <h1 class="header__title">
+        Death 
+          <span class="header__logo"></span>
+        Match
+        </h1>
     </header>
 
-    <aside>
+    <aside class="sidebar">
 
-        <section class="warriors">
-            <h3>Warriors</h3>
-            <ul class="clearfix">
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-                <li class="warrior"></li>
-            </ul>
-        </section>
+      <section class="warriors">
+        <h3 class="title title--medium sidebar__title">Warriors</h3>
+        <ul class="warriors__list clearfix">
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+          <li class="warrior warrior--small warriors__list-item"></li>
+        </ul>
+      </section>
 
-        <section class="top-five">
-            <h3>Top Five</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="warrior-name">Warrior</th>
-                        <th class="ranking">Ranking</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="warrior-name">Lazer</td>
-                        <td class="ranking">22</td>
-                    </tr>
-                    <tr>
-                        <td class="warrior-name">Blaze</td>
-                        <td class="ranking">18</td>
-                    </tr>
-                    <tr>
-                        <td class="warrior-name">Blazer</td>
-                        <td class="ranking">15</td>
-                    </tr>
-                    <tr>
-                        <td class="warrior-name">Iceman</td>
-                        <td class="ranking">12</td>
-                    </tr>
-                    <tr>
-                        <td class="warrior-name">Lightning</td>
-                        <td class="ranking">9</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+      <section class="top-five">
+        <h3 class="title title--medium sidebar__title">Top Five</h3>
+        <table class="table top-five__table">
+          <thead class="table__thead">
+            <tr class="table__row">
+              <th class="table__cell">Warrior</th>
+              <th class="table__cell text-right">Ranking</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table__row">
+              <td class="table__cell">Lazer</td>
+              <td class="table__cell text-right">22</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">Blaze</td>
+              <td class="table__cell text-right">18</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">Blazer</td>
+              <td class="table__cell text-right">15</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">Iceman</td>
+              <td class="table__cell text-right">12</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__cell">Lightning</td>
+              <td class="table__cell text-right">9</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
     </aside>
 
     <div class="main">
-        
-        <h2>Matchup!</h2>
-        <h4>Who wins??</h4>
-        
-        <figure>
-            <div class="warrior"></div>
-            <figcaption>
-                <div class="name"><i>Lazer</i></div>
-                <div class="wins"><i>22</i></div>
-            </figcaption>
-        </figure>
-        
-        <h2>
-          <i>vs</i>
-        </h2>
+      <h2 class="title title--large title--yellow main__title--first">Matchup!</h2>
+      <h3 class="title title--medium title--yellow">Who wins??</h3>
 
-        <figure>
-            <div class="warrior"></div>
-            <figcaption class="clearfix">
-                <div class="name">
-                    <i>Blazer</i>
-                </div>
-                <div class="wins"><i>15</i></div>
-            </figcaption>
-        </figure>
+      <figure class="warrior-detail main__warrior-detail main__warrior-detail--first">
+        <div class="warrior warrior--large"></div>
+        <figcaption class="warrior-detail__caption">
+          <div class="warrior-detail__name">Lazer</div>
+          <div class="warrior-detail__wins">22</div>
+        </figcaption>
+      </figure>
+
+      <h3 class="title title--large title--yellow title--italic">vs</h3>
+
+      <figure class="warrior-detail main__warrior-detail">
+        <div class="warrior warrior--large"></div>
+        <figcaption class="warrior-detail__caption">
+          <div class="warrior-detail__name">Blazer</div>
+          <div class="warrior-detail__wins">15</div>
+        </figcaption>
+      </figure>
 
     </div>
 
-    <footer>
-        <h1>Death <span></span> Match</h1>
-    </footer>
 
 </body>
-
+    
 </html>
