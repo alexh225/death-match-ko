@@ -8,7 +8,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "phantomcss": "^1.0.0"
+    "phantomcss": "^1.0.0",
+    "requirejs": "^2.2.0"
   },
   "scripts": {},
   "author": "",
