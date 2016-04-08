@@ -181,16 +181,16 @@ body {
 }
 
 .table__cell {
-    padding: ($gutter / 2)($gutter * 0.75);
+    padding: ($gutter / 2) ($gutter * 0.75);
 }
 
-/* =========== top five block ============= */
+/* =========== leaderboard block ============= */
 
-.top-five {
+.leaderboard {
     padding-bottom: 50px;
 }
 
-.top-five__table {
+.leaderboard__table {
     width: 100% ;
 }
 
