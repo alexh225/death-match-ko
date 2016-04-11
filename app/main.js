@@ -18,6 +18,14 @@ define([
 		template: { require: 'text!app/components/matchup/matchup.html' }
 	});
 
+	ko.components.register('Warrior', {
+		template: { require: 'text!app/components/warrior/warrior.html' }
+	});
+
+	ko.components.register('WarriorDetail', {
+		template: { require: 'text!app/components/warriorDetail/warriorDetail.html' }
+	});
+
 	ko.applyBindings();
 
 });
