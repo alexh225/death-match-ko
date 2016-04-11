@@ -1,18 +1,20 @@
 {
-    "name": "death-match",
-    "version": "1.1",
-    "description": "",
-    "main": "index.spec.js",
-    "directories": {
-        "test": "tests"
-    },
-    "dependencies": {
-        "requirejs": "^2.2.0"
-    },
-    "devDependencies": {
-        "phantomcss": "^1.0.0"
-    },
-    "scripts": {},
-    "author": "",
-    "license": "ISC"
+  "name": "death-match",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.spec.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "knockout": "^3.4.0",
+    "requirejs": "^2.2.0",
+    "text": "requirejs/text"
+  },
+  "devDependencies": {
+    "phantomcss": "^1.0.0"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
 }
