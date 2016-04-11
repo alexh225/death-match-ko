@@ -80,28 +80,7 @@ body {
 
 /* =========== header block ============= */
 
-.header {
-    background-color: $dark-charcoal;
-    color: $white;
-    padding: $gutter;
-    text-align: center;
-}
-
-.header__title {
-    font-family: 'Phosphate Solid', 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    font-size: 36px;
-}
-
-.header__logo {
-    display: inline-block;
-    height: $logo-size;
-    width: $logo-size;
-    border-radius: $logo-size / 2;
-    background-color: $white;
-    border: 15px solid $red;
-    margin: 0 10px -15px 10px;
-}
+@import '../app/components/header/header';
 
 /* =========== sidebar block ============= */
 
@@ -121,16 +100,7 @@ body {
 
 /* =========== warriors block ============= */
 
-.warriors {
-    padding: 5px 0 $gutter $gutter;
-}
-
-.warriors__list-item {
-    float: left;
-    list-style-type: none;
-    margin-right: $gutter;
-    margin-bottom: $gutter;
-}
+@import '../app/components/warriorsList/warriorsList';
 
 /* =========== warrior block ============= */
 
@@ -186,49 +156,11 @@ body {
 
 /* =========== leaderboard block ============= */
 
-.leaderboard {
-    padding-bottom: 50px;
-}
-
-.leaderboard__table {
-    width: 100% ;
-}
+@import '../app/components/leaderboard/leaderboard';
 
 /* =========== main block ============= */
 
-.main {
-    width: calc(100% - #{ $sidebar-size });
-    float: left;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 50px;
-
-    @include mobile-only { width: 100%; }
-
-}
-
-.main__title--first {
-  margin-bottom: $gutter;
-}
-
-.main__title--third {
-  @include desktop-only {
-    display: inline-block;
-    margin: $gutter;
-    vertical-align: middle
-  }
-}
-
-.main__warrior-detail {
-  margin-top: $gutter * 2.5;
-
-  @include desktop-only {
-    margin: $gutter;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-}
+@import '../app/components/matchup/matchup';
 
 /* =========== warrior detail block ============= */
 

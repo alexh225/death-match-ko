@@ -28,7 +28,9 @@ casper.test.begin('Death Match visual tests', function(test) {
     casper.viewport(screenWidth, screenHeight);
 
     casper.then(function() {
-		phantomcss.screenshot('aside .warriors', 'warriors_section');
+        phantomcss.screenshot('.header', 'header');
+        phantomcss.screenshot('.sidebar .warriors', 'warriors_section');
+        phantomcss.screenshot('.sidebar .top-five', 'top_five_section');
     });
 
     casper.then(function() {
