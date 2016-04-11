@@ -16,3 +16,4 @@ npm install -g phantomjs@1.9.8
 v1.0 - app with visual diff example
 v1.1 - app with module loader added and main.js created
 v1.2 - knockout and text plugin implemented, app divided into high level components
+v1.3 - all components created, scss files split into either component or separate file
