@@ -1,19 +1,38 @@
 define([
-	'knockout'
-], function(ko){
+    'knockout'
+], function(ko) {
 
-	var ComponentHelper = function() {
+    var ComponentHelper = function() {};
 
-		this.registerComponents = function(config) {
+    ComponentHelper.prototype.registerComponents = function() {
 
-			for(var name in config) {
-				ko.components.register(name, config[name]);	
-			}
+        ko.components.register('Header', {
+            template: { require: 'text!app/components/header/header.html' }
+        });
 
-		};
+        ko.components.register('WarriorsList', {
+            template: { require: 'text!app/components/warriorsList/warriorsList.html' }
+        });
 
-	};
+        ko.components.register('Leaderboard', {
+            template: { require: 'text!app/components/leaderboard/leaderboard.html' }
+        });
 
-	return ComponentHelper;
+        ko.components.register('Matchup', {
+            template: { require: 'text!app/components/matchup/matchup.html' }
+        });
+
+        ko.components.register('Warrior', {
+            template: { require: 'text!app/components/warrior/warrior.html' },
+            viewModel: { require: 'app/components/warrior/warrior' }
+        });
+
+        ko.components.register('WarriorDetail', {
+            template: { require: 'text!app/components/warriorDetail/warriorDetail.html' }
+        });
+        
+    };
+
+    return ComponentHelper;
 
 });
