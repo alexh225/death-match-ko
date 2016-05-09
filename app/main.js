@@ -1,9 +1,12 @@
 define([
 	'knockout',
-	'helpers/componentHelper'
-], function(ko, ComponentHelper){
+	'helpers/componentHelper',
+	'models/appModel'
+], function(ko, ComponentHelper, AppModel){
 	
 	new ComponentHelper().registerComponents();
+
+	this.appModel = new AppModel();
 
 	ko.applyBindings();
 

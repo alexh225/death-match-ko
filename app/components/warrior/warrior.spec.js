@@ -14,6 +14,16 @@ define([
 			expect(warrior.size()).toBe('warrior--foo');
 		});
 
+		it('should default the image to empty string if no parameter is provided', function(){
+			var warrior = new Warrior();
+			expect(warrior.image()).toBe('');
+		});
+
+		it('should set the image properly if the parameter is provided', function(){
+			var warrior = new Warrior({ image: 'foo' });
+			expect(warrior.image()).toBe('foo');
+		});
+
 	});
 
 });
