@@ -19,7 +19,8 @@ define([
         });
 
         ko.components.register('Matchup', {
-            template: { require: 'text!app/components/matchup/matchup.html' }
+            template: { require: 'text!app/components/matchup/matchup.html' },
+            viewModel: { require: 'app/components/matchup/matchup' }
         });
 
         ko.components.register('Warrior', {

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "knockout": "^3.4.0",
+    "knockout.mapping": "^2.4.3",
+    "lodash-amd": "^4.12.0",
     "requirejs": "^2.2.0",
     "text": "requirejs/text"
   },

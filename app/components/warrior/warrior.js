@@ -9,8 +9,8 @@ define([
 		if(!params.size) params.size = 'small';
 		if(!params.image) params.image = '';
 
-		this.size = ko.observable('warrior--' + params.size);
-		this.image = ko.observable(params.image);
+		this.size = ko.observable('warrior--' + ko.unwrap(params.size));
+		this.image = params.image;
 
 	};
 
