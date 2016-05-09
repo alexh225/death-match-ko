@@ -18,3 +18,5 @@
 * v1.2 - knockout and text plugin implemented, app divided into high level components
 * v1.3 - all components created, scss files split into either component or separate file
 * v1.4 - viewmodel created for warrior component, component helper created to register all components
+* v1.5 - adding karma to run unit tests, warrior.spec.js file created
+* v1.6 - create appModel with mock data, and pass it through components
