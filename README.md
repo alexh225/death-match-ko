@@ -20,3 +20,5 @@
 * v1.4 - viewmodel created for warrior component, component helper created to register all components
 * v1.5 - adding karma to run unit tests, warrior.spec.js file created
 * v1.6 - create appModel with mock data, and pass it through components
+* v1.7 - create matchup viewmodel, random oponents functionality
+* v1.8 - increment scores on click and choose new oponents
