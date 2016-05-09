@@ -1,8 +1,16 @@
 <h2 class="title title--large title--yellow main__title--first">Matchup!</h2>
 <h3 class="title title--medium title--yellow">Who wins??</h3>
 
-<!-- ko component: 'WarriorDetail' --><!-- /ko -->
+<!-- ko if: shouldShowOponents -->
 
-<h3 class="title title--large title--yellow title--italic main__title--third">vs</h3>
+	<!-- ko component: { name: 'WarriorDetail', params: { warrior: oponent1 } } --><!-- /ko -->
 
-<!-- ko component: 'WarriorDetail' --><!-- /ko -->
+	<h3 class="title title--large title--yellow title--italic main__title--third">vs</h3>
+
+	<!-- ko component: { name: 'WarriorDetail', params: { warrior: oponent2 } } --><!-- /ko -->
+
+<!-- /ko -->
+
+<!-- ko ifnot: shouldShowOponents -->
+	<span>there are not enough warriors at this time</span>
+<!-- /ko -->

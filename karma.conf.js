@@ -19,6 +19,7 @@ module.exports = function(config) {
       'test-main.js',
       {pattern: 'app/**/*.js', included: false},
       {pattern: 'node_modules/knockout/**/*.js', included: false},
+      {pattern: 'node_modules/lodash-amd/**/*.js', included: false}
     ],
 
 
