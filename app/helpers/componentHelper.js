@@ -15,7 +15,8 @@ define([
         });
 
         ko.components.register('Leaderboard', {
-            template: { require: 'text!app/components/leaderboard/leaderboard.html' }
+            template: { require: 'text!app/components/leaderboard/leaderboard.html' },
+            viewModel: { require: 'app/components/leaderboard/leaderboard' }
         });
 
         ko.components.register('Matchup', {

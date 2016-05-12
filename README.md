@@ -22,3 +22,4 @@
 * v1.6 - create appModel with mock data, and pass it through components
 * v1.7 - create matchup viewmodel, random oponents functionality
 * v1.8 - increment scores on click and choose new oponents
+* v1.9 - sort leaderboard decending by wins
