@@ -2,23 +2,26 @@
 
 From the root directory: `npm install`
 
-### Run the app:
+### Run the app
+___
 At this time the app is a UI only, so it can be run using a simple, local file server like:
 
 * [Serve](http://get-serve.com) (requires Ruby)
 * [HTTP Server](https://github.com/indexzero/http-server)
 
-### Run unit tests (v1.5+):
+### Run unit tests (v1.5+)
+___
 1. Run this command from the command line: `karma start`
 
-### Run visual tests:
-
+### Run visual tests
+___
 1. Make sure to install PhantomJS: `npm install -g phantomjs@1.9.8`
 2. Start a local web/file server
 3. Make sure the url on line 3 of tests/visual/index.spec.js matches your the address of your local server
 4. Run this command from a command line prompt: `casperjs test tests/visual/index.spec.js`
 
-### Compile SASS to CSS:
+### Compile SASS to CSS
+___
 1. Start the SASS watcher from the root directory: `sass --watch scss:css`
 
 # tags
