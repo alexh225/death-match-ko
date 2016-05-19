@@ -1,5 +1,5 @@
 define(function(){
 	return {
-		socketUrl: 'http://localhost:3000'
+		socketUrl: '/' // we're not using namespaces, so just connect to the root url
 	};
 });
