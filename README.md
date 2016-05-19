@@ -36,3 +36,4 @@ ___
 * v1.7 - create matchup viewmodel, random oponents functionality
 * v1.8 - increment scores on click and choose new oponents
 * v1.9 - sort leaderboard decending by wins
+* v2.0 - express server now included in project
