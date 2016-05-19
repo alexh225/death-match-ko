@@ -2,12 +2,11 @@
 
 From the root directory: `npm install`
 
-### Run the app
+### Run the app (v2.0+)
 ___
-At this time the app is a UI only, so it can be run using a simple, local file server like:
+To run the app, run this command from the root directory: `node server.js`
 
-* [Serve](http://get-serve.com) (requires Ruby)
-* [HTTP Server](https://github.com/indexzero/http-server)
+The site can be viewed at: **http://localhost:3000**
 
 ### Run unit tests (v1.5+)
 ___
