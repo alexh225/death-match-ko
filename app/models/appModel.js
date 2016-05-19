@@ -1,16 +1,10 @@
 define([
     'knockout',
-    'mapping'
-], function(ko, mapping) {
+    'mapping',
+    'socket.io'
+], function(ko, mapping, io) {
 
-    var mockWarriors = [
-        { id: 1231, name: 'Mr. T', 			wins: 0, image: 'images/mr-t.jpg' },
-        { id: 1232, name: 'Chuck Norris', 	wins: 0, image: 'images/chuck-norris.jpg' },
-        { id: 1233, name: 'Darth Vader', 	wins: 0, image: 'images/darth-vader.jpg' },
-        { id: 1234, name: 'Rocky Balboa', 	wins: 0, image: 'images/rocky-balboa.jpg' },
-        { id: 1235, name: 'T2000', 			wins: 0, image: 'images/t2000.jpg' },
-        { id: 1236, name: 'Nitro', 			wins: 0, image: 'images/nitro.jpg' }
-    ];
+    var socket = io.connect('http://localhost:3000');
 
     var warriorsMappingConfig = {
         // the key callback allows us to return the property to use as the key for the
@@ -29,9 +23,15 @@ define([
     };
 
     var AppModel = function() {
-        return {
-            warriors: mapping.fromJS(mockWarriors, warriorsMappingConfig)
-        };
+        
+        socket.on('allWarriorsData', this.handleAllWarriorsDataEvent.bind(this));
+        
+        this.warriors = ko.observableArray();
+
+    };
+
+    AppModel.prototype.handleAllWarriorsDataEvent = function(data) {
+        mapping.fromJS(data, warriorsMappingConfig, this.warriors);
     };
 
     return AppModel;

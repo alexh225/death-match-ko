@@ -7,7 +7,8 @@ requirejs.config({
         'text': 'node_modules/text/text',
         'knockout': 'node_modules/knockout/build/output/knockout-latest',
         'lodash': 'node_modules/lodash-amd',
-        'mapping': 'node_modules/knockout.mapping/knockout.mapping'
+        'mapping': 'node_modules/knockout.mapping/knockout.mapping',
+        'socket.io': 'node_modules/socket.io-client/socket.io'
     },
     shim: {
         mapping: {

@@ -18,7 +18,8 @@ require.config({
 
   // for some reason we have to use the ./ for the node_modules directory in the test environment
   paths: {
-    'node_modules': './node_modules'
+    'node_modules': './node_modules',
+    'socket.io': '_mocks/socket.io.mock'
   },
 
   // dynamically load all test files

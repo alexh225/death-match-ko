@@ -18,6 +18,7 @@ module.exports = function(config) {
       'requireConfig.js',
       'test-main.js',
       {pattern: 'app/**/*.js', included: false},
+      {pattern: '_mocks/**/*.js', included: false},
       {pattern: 'node_modules/knockout*/**/*.js', included: false},
       {pattern: 'node_modules/lodash-amd/**/*.js', included: false}
     ],
