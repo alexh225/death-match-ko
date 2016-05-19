@@ -1,10 +1,11 @@
 define([
     'knockout',
     'mapping',
-    'socket.io'
-], function(ko, mapping, io) {
+    'socket.io',
+    'app/config'
+], function(ko, mapping, io, config) {
 
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect(config.socketUrl);
 
     var warriorsMappingConfig = {
         // the key callback allows us to return the property to use as the key for the
