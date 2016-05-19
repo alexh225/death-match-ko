@@ -1,8 +1,11 @@
 define([
 	'knockout',
-	'lodash/sampleSize'
-], function(ko, _sampleSize){
+	'lodash/sampleSize',
+	'socket.io'
+], function(ko, _sampleSize, io){
 	
+    var socket = io.connect('http://localhost:3000');
+
 	var Matchup = function(params) {
 
 		this.availableWarriors = params.appModel.warriors;
@@ -25,15 +28,17 @@ define([
 	};
 
 	Matchup.prototype.selectOpponent1 = function() {
-		var opponent = this.opponent1();
-		opponent.wins( opponent.wins() + 1 );
+		this.emitSelection({ id: this.opponent1().id });
 		this.getOpponents();
 	};
 
 	Matchup.prototype.selectOpponent2 = function() {
-		var opponent = this.opponent2();
-		opponent.wins( opponent.wins() + 1 );
+		this.emitSelection({ id: this.opponent2().id });
 		this.getOpponents();
+	};
+
+	Matchup.prototype.emitSelection = function(payload) {
+		socket.emit('warriorSelection', payload);
 	};
 
 	return Matchup;

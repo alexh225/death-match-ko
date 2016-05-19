@@ -6,6 +6,9 @@ define(function(){
 			return {
 				on: function(eventName) {
 					console.log('mock socket.io on:', eventName);
+				},
+				emit: function(eventName, payload) {
+					console.log('mock socket.io emit:', eventName, payload);
 				}
 			}
 		}

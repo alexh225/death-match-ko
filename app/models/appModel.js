@@ -19,6 +19,11 @@ define([
             return mapping.fromJS(item.data, {
                 observe: ['wins']
             });
+        },
+        // the update callback gives us control of how to handle updates
+        update: function(item) {
+            item.target.wins(item.data.wins);
+            return item.target;
         }
     };
 

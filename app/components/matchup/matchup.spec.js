@@ -61,8 +61,9 @@ define([
 
         });
 
-        it('should increment and select new opponents when opponent1 is selected', function() {
+        it('should emit selection event and select new opponents when opponent1 is selected', function() {
             spyOn(matchup, 'getOpponents').and.callThrough();
+            spyOn(matchup, 'emitSelection').and.callThrough();
 
             var warrior1 = { id: 121, wins: ko.observable(20) };
             var warrior2 = { id: 122, wins: ko.observable(21) };
@@ -71,13 +72,14 @@ define([
             matchup.opponent2(warrior2);
 
             matchup.selectOpponent1();
-            expect(warrior1.wins()).toBe(21);
-            expect(warrior2.wins()).toBe(21);
+
             expect(matchup.getOpponents).toHaveBeenCalled();
+            expect(matchup.emitSelection).toHaveBeenCalledWith({ id: 121 });
         });
 
-        it('should increment and select new opponents when opponent2 is selected', function() {
+        it('should emit selection event and select new opponents when opponent2 is selected', function() {
             spyOn(matchup, 'getOpponents').and.callThrough();
+            spyOn(matchup, 'emitSelection').and.callThrough();
 
             var warrior1 = { id: 121, wins: ko.observable(20) };
             var warrior2 = { id: 122, wins: ko.observable(21) };
@@ -86,9 +88,9 @@ define([
             matchup.opponent2(warrior2);
 
             matchup.selectOpponent2();
-            expect(warrior1.wins()).toBe(20);
-            expect(warrior2.wins()).toBe(22);
+
             expect(matchup.getOpponents).toHaveBeenCalled();
+            expect(matchup.emitSelection).toHaveBeenCalledWith({ id: 122 });
         });
 
     });

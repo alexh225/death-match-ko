@@ -28,4 +28,15 @@ var warriors = [
 io.on('connection', function(socket){
 	console.log('new client connected');
 	io.sockets.emit('allWarriorsData', warriors);
+
+	socket.on('warriorSelection', function(payload){
+		console.log('warriorSelection', payload);
+		var newWarriors = warriors.map(function(warrior){
+			if(warrior.id === payload.id) warrior.wins++;
+			return warrior;
+		});
+		io.sockets.emit('allWarriorsData', newWarriors);
+		warriors = newWarriors;
+	});
+
 });
