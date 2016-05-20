@@ -36,3 +36,6 @@ ___
 * v1.8 - increment scores on click and choose new oponents
 * v1.9 - sort leaderboard decending by wins
 * v2.0 - express server now included in project
+* v2.1 - adding socket.io to the server
+* v2.2 - adding socket.io client and sending initial data from the server
+* v2.3 - emitting event on warrior selection, increment now done on server
