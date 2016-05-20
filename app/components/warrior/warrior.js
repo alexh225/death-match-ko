@@ -4,7 +4,7 @@ define([
 
 	var Warrior = function(params){
 
-		var params = params || {};
+		params = params || {};
 
 		if(!params.size) params.size = 'small';
 		if(!params.image) params.image = '';
