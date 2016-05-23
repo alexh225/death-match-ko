@@ -39,3 +39,4 @@ ___
 * v2.1 - adding socket.io to the server
 * v2.2 - adding socket.io client and sending initial data from the server
 * v2.3 - emitting event on warrior selection, increment now done on server
+* v2.4 - gulp task runner added with linting, test and sass tasks
