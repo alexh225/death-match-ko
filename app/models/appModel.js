@@ -2,8 +2,9 @@ define([
     'knockout',
     'mapping',
     'socket.io',
-    'app/config'
-], function(ko, mapping, io, config) {
+    'app/config',
+    'helpers/events'
+], function(ko, mapping, io, config, events) {
 
     var socket = io.connect(config.socketUrl);
 
@@ -38,6 +39,7 @@ define([
 
     AppModel.prototype.handleAllWarriorsDataEvent = function(data) {
         mapping.fromJS(data, warriorsMappingConfig, this.warriors);
+        events.trigger('allWarriorsData:received');
     };
 
     return AppModel;

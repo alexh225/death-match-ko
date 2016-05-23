@@ -1,13 +1,18 @@
 define([
-	'knockout',
-	'helpers/componentHelper',
-	'models/appModel'
-], function(ko, ComponentHelper, AppModel){
-	
-	new ComponentHelper().registerComponents();
+    'knockout',
+    'helpers/componentHelper',
+    'models/appModel',
+    'domready'
+], function(ko, ComponentHelper, AppModel, domready) {
 
-	this.appModel = new AppModel();
+    domready(function() {
 
-	ko.applyBindings();
+        new ComponentHelper().registerComponents();
+
+        this.appModel = new AppModel();
+
+        ko.applyBindings();
+
+    });
 
 });
