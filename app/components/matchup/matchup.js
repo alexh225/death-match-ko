@@ -21,8 +21,8 @@ define([
 
         var instance = this;
 
-        events.on('allWarriorsData:received', function() {
-            if (instance.availableWarriors().length === 0) instance.getOpponents();
+        events.once('allWarriorsData:received', function() {
+            instance.getOpponents();
         });
 
     };
