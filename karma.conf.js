@@ -1,78 +1,96 @@
-// Karma configuration
-// Generated on Thu Apr 28 2016 06:40:45 GMT-0500 (CDT)
+var path = require('path');
+var webpackConfig = require('./webpack.config.js');
+
+delete webpackConfig.entry;
+webpackConfig.devtool = 'inline-source-map';
+
+// we need to use webpack's preloader to instrument the src files
+webpackConfig.module = {
+    preLoaders: [
+        {
+            test: /^(.(?!spec|test))*.js$/,
+            include: path.resolve('app/'),
+            loader: 'istanbul-instrumenter'
+        }
+    ]
+};
+
+webpackConfig.plugins = []; // since we only have the single uglify plugin, set the 
+                            // plugins back to an empty array during testing to spped things up
 
 module.exports = function(config) {
-  config.set({
+    config.set({
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '',
 
 
-    // list of files / patterns to load in the browser
-    files: [
-      'requireConfig.js',
-      'test-main.js',
-      {pattern: 'app/**/*.js', included: false},
-      {pattern: '_mocks/**/*.js', included: false},
-      {pattern: 'node_modules/knockout*/**/*.js', included: false},
-      {pattern: 'node_modules/lodash-amd/**/*.js', included: false}
-    ],
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['jasmine'],
 
 
-    // list of files to exclude
-    exclude: [],
+        // list of files / patterns to load in the browser
+        files: [
+            'test-main.js'
+        ],
 
 
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-        'app/**/!(*.spec).js': ['coverage']
-    },
+        // list of files to exclude
+        exclude: [],
 
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+            // we don't need the coverage preprocessor because we're instrumenting the files with webpack
+            'test-main.js': ['sourcemap', 'webpack'] 
+        },
 
-    coverageReporter: {
-        type : 'html',
-        dir : 'coverage/'
-    },
+        webpack: webpackConfig,
 
-    // web server port
-    port: 9876,
+        webpackMiddleware: {
+            noInfo: true
+        },
 
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['progress', 'coverage'],
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
+        },
 
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_ERROR,
-
-
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+        // web server port
+        port: 9876,
 
 
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
 
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
-  });
+
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_ERROR,
+
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
+
+
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['Chrome'],
+
+
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: false,
+
+        // Concurrency level
+        // how many browser should be started simultaneous
+        concurrency: Infinity
+    });
 };
